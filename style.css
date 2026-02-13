@@ -1,9 +1,47 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f6f1;
+  text-align: center;
+  padding: 40px 20px 30px;
+  box-sizing: border-box;
+}
+
+#hedlinecontainer {
+  margin-top: 10px;
+}
+
+#shine {
+  font-size: 9vw;
+  font-weight: bold;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #222 0%, #fff 50%, #222 100%) 0 0 no-repeat;
+  background-size: 150px 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0%, 10% { background-position: -1000px 0; }
+  20% { background-position: 0 0; }
+  90% { background-position: 100% 0; }
+  100% { background-position: 1000px 0; }
+}
+
 .gallery {
   --d: 10s;
   display: grid;
   place-items: center;
-  width: 220px;
-  margin: auto;
+  width: 55vw;
+  max-width: 180px;
+  margin-bottom: 10px;
 }
 
 .gallery > img {
@@ -11,7 +49,7 @@
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  border: 10px solid #f2f2f2;
+  border: 8px solid #f2f2f2;
   box-shadow: 0 0 4px #0007;
   z-index: 2;
   animation: slide var(--d) infinite, z-order var(--d) infinite steps(1);
@@ -40,69 +78,4 @@
 @keyframes z-order-last {
   10%, 20% { z-index: 1; }
   90% { z-index: 2; }
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #f8f6f1;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-#hedlinecontainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-#shine {
-  font-size: 200px;
-  font-weight: bold;
-  line-height: 1.1;
-  letter-spacing: 2px;
-
-  background: linear-gradient(90deg, #222 0%, #fff 50%, #222 100%) 0 0 no-repeat;
-  background-size: 150px 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  color: transparent;
-  animation: shine 3s infinite;
-}
-
-@keyframes shine {
-  0%, 10% { background-position: -1000px 0; }
-  20% { background-position: 0 0; }
-  90% { background-position: 100% 0; }
-  100% { background-position: 1000px 0; }
-}
-
-@media only screen and (max-width: 600px) {
-
-  body {
-    padding: 60px 20px 20px;
-  }
-
-  #hedlinecontainer {
-    margin-top: 60px;
-    margin-bottom: 30px;
-  }
-
-  #shine {
-    font-size: 200px;
-    line-height: 1.2;
-  }
-
-  .gallery {
-    width: 65vw;
-    max-width: 180px;
-    margin: auto;
-  }
 }
