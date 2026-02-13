@@ -62,7 +62,7 @@ body {
 }
 
 #shine {
-  font-size: clamp(70px, 15vw, 200px);
+  font-size: clamp(70px, 12vw, 200px);
   font-weight: bold;
   line-height: 1.1;
   letter-spacing: 2px;
@@ -84,15 +84,21 @@ body {
 @media only screen and (max-width: 600px) {
 
   body {
+    justify-content: flex-start;
     padding: 30px 15px;
   }
 
   #hedlinecontainer {
-    margin: 20px 0;
+    margin: 20px 0 10px;
+  }
+
+  #shine {
+    font-size: clamp(48px, 10vw, 90px);
   }
 
   .gallery {
-    width: 70vw;
-    max-width: 200px;
+    width: 60vw;
+    max-width: 180px;
+    margin-top: 10px;
   }
 }
